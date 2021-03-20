@@ -1,8 +1,6 @@
 import os
 import requests
 
-print(os.environ)
-
 # Get the twilio client specific values from env
 TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("BOT_CHAT_ID")
@@ -65,5 +63,4 @@ media_url = media_url_for_avatar if media_url_for_avatar else None,
 body = response
 
 r = requests.get(f'https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={CHAT_ID}&text={response}')
-print(f'https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={CHAT_ID}&text={response}')
-print(r.text, r.status_code)
+print('status -> '+str(r.status_code))
