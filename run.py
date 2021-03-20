@@ -2,8 +2,8 @@ import os
 import requests
 
 # Get the twilio client specific values from env
-TOKEN = os.environ['BOT_TOKEN']
-CHAT_ID = os.environ['BOT_CHAT_ID']
+TOKEN = os.getenv("BOT_TOKEN")
+CHAT_ID = os.getenv("BOT_CHAT_ID")
 
 # Get the github event specific values from env
 GITHUB_SERVER_URL = os.getenv("GITHUB_SERVER_URL")
