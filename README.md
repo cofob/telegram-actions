@@ -33,7 +33,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: whatsapp-notify
+      - name: telegram-notify
         uses: cofob/telegram-actions@main
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
