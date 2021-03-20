@@ -63,4 +63,5 @@ media_url = media_url_for_avatar if media_url_for_avatar else None,
 body = response
 
 r = requests.get(f'https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={CHAT_ID}&text={response}')
+print(f'https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={CHAT_ID}&text={response}')
 print(r.text, r.status_code)
