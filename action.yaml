@@ -1,6 +1,6 @@
-name: "Whatsapp Actions for Github"
-author: "kaviadigdarshan"
-description: "Send a rich-formatted message on the user's Whatsapp number whenever there is a change in repository"
+name: "Telegram Actions for Github"
+author: "cofob"
+description: "Send a rich-formatted message on the user's Telegram chat whenever there is a change in repository"
 branding:
   icon: message-circle
   color: black

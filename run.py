@@ -1,11 +1,9 @@
 import os
-from twilio.rest import Client
+import requests
 
 # Get the twilio client specific values from env
-ACCOUNT_SID = os.environ['ACCOUNT_SID']
-AUTH_TOKEN = os.environ['AUTH_TOKEN']
-TO_WHATSAPP_NUMBER  = os.environ['TO_WHATSAPP_NUMBER']
-FROM_WHATSAPP_NUMBER = "+14155238886"
+TOKEN = os.environ['BOT_TOKEN']
+CHAT_ID = os.environ['BOT_CHAT_ID']
 
 # Get the github event specific values from env
 GITHUB_SERVER_URL = os.getenv("GITHUB_SERVER_URL")
@@ -61,14 +59,9 @@ else:
     response += f"*Repository URL*: {repo_url}"
 
 # Create twilio client from the given authentication token and account sid
-client = Client(ACCOUNT_SID, AUTH_TOKEN)
 
 # Prepare and send the message payload
-message = client.messages.create(
-                              media_url=media_url_for_avatar if media_url_for_avatar else None,
-                              body=response,
-                              from_=f"whatsapp:{FROM_WHATSAPP_NUMBER}",
-                              to=f"whatsapp:{TO_WHATSAPP_NUMBER}"
-                          )
+media_url = media_url_for_avatar if media_url_for_avatar else None,
+body = response
 
-print(f"Whatsapp Message ID: {message.sid}")
+requests.get(f'https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={CHAT_ID}&text={response}')
