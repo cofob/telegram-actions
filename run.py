@@ -58,8 +58,6 @@ else:
     response += f"A new *{GITHUB_EVENT_NAME}* event was triggered by *{GITHUB_ACTOR}* in your repository *{REPOSITORY}*\n\n"
     response += f"*Repository URL*: {repo_url}"
 
-# Create twilio client from the given authentication token and account sid
-
 # Prepare and send the message payload
 media_url = media_url_for_avatar if media_url_for_avatar else None,
 body = response
