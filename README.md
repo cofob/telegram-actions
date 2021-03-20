@@ -44,7 +44,7 @@ jobs:
 
 ### Pull Request Message
 
-[comment]: <> (![Message for a PR event]&#40;pull_request_notification.jpg&#41;)
+![Message for a PR event](https://i.imgur.com/anD5rO8.jpg)
 
 ## Support
 Give us a :star2: to support!
