@@ -1,6 +1,8 @@
 import os
 import requests
 
+print(os.environ)
+
 # Get the twilio client specific values from env
 TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("BOT_CHAT_ID")
