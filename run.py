@@ -1,10 +1,12 @@
 import os
 import requests
 from urllib.parse import urlencode
+import json
 
-# Get the twilio client specific values from env
-TOKEN = os.getenv("BOT_TOKEN")
-CHAT_ID = os.getenv("BOT_CHAT_ID")
+# Get the telegram client specific values from env
+TOKEN = os.environ["BOT_TOKEN"]
+CHAT_ID = os.environ["BOT_CHAT_ID"]
+IGNORE_FROM = os.getenv("BOT_IGNORE")
 
 # Get the github event specific values from env
 GITHUB_SERVER_URL = os.getenv("GITHUB_SERVER_URL")
@@ -21,10 +23,18 @@ ISSUE_BODY = os.getenv('INPUT_ISSUE_BODY')
 REPO_FORK_COUNT = os.getenv('INPUT_REPO_FORK_COUNT')
 REPO_WATCH_COUNT = os.getenv('INPUT_REPO_WATCH_COUNT')
 
+if IGNORE_FROM is not None:
+    IGNORE = json.loads(IGNORE_FROM)
+else:
+    IGNORE = []
+
+if GITHUB_ACTOR in IGNORE:
+    raise Exception('Ignoring actor')
+
 repo_url = f"{GITHUB_SERVER_URL}/{REPOSITORY}"
 response = f"Hello there, \n"
 
-# Process the event and prepare Whatsapp message payload
+# Process the event and prepare Telegram message payload
 media_url_for_avatar = f"{GITHUB_SERVER_URL}/{GITHUB_ACTOR}.png"
 if GITHUB_EVENT_NAME == "push":
     response += f"There is a new <b>push</b> in your repository <b>{REPOSITORY}</b> by <b>{GITHUB_ACTOR}</b>.\n\n"
