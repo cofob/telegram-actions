@@ -24,7 +24,7 @@ repo_url = f"{GITHUB_SERVER_URL}/{REPOSITORY}"
 response = f"Hello there, \n"
 
 # Process the event and prepare Whatsapp message payload
-media_url_for_avatar = [f"{GITHUB_SERVER_URL}/{GITHUB_ACTOR}.png"]
+media_url_for_avatar = f"{GITHUB_SERVER_URL}/{GITHUB_ACTOR}.png"
 if GITHUB_EVENT_NAME == "push":
     response += f"There is a new <b>push</b> in your repository <b>{REPOSITORY}</b> by <b>{GITHUB_ACTOR}</b>.\n\n"
     response += f"<b>Repository URL</b>: {repo_url}"
