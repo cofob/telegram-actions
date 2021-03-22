@@ -49,11 +49,11 @@ elif GITHUB_EVENT_NAME == "issues":
 elif GITHUB_EVENT_NAME == "fork":
     response += f"Your repository <b>{REPOSITORY}</b> was forked by <b>{GITHUB_ACTOR}</b>.\n"
     response += f"Current fork count: <b>{REPO_FORK_COUNT}</b>\n\n"
-    response += f"__Repository URL__: {repo_url}"
+    response += f"<b>Repository URL</b>: {repo_url}"
 elif GITHUB_EVENT_NAME == "watch":
     response += f"Your repository <b>{REPOSITORY}</b> is now watched by <b>{GITHUB_ACTOR}</b>.\n"
     response += f"Current watch count: <b>{REPO_WATCH_COUNT}</b>\n\n"
-    response += f"__Repository URL__: {repo_url}"
+    response += f"<b>Repository URL</b>: {repo_url}"
 else:
     response += f"A new <b>{GITHUB_EVENT_NAME}</b> event was triggered by <b>{GITHUB_ACTOR}</b> in your repository <b>{REPOSITORY}</b>\n\n"
     response += f"<b>Repository URL</b>: {repo_url}"
