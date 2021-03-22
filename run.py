@@ -31,19 +31,19 @@ if GITHUB_EVENT_NAME == "push":
 elif GITHUB_EVENT_NAME == "pull_request":
     pr_url = f"{repo_url}/pull/{PR_NUMBER}"
     response += f"A new event was triggered for a <b>Pull Request</b> in your repository <b>{REPOSITORY}</b>.\n\n"
-    response += f"<b>PR Number</b>: ```#{PR_NUMBER}```\n"
-    response += f"<b>PR Title</b> : ```{PR_TITLE}```\n"
-    response += f"<b>PR User</b>  : ```{GITHUB_ACTOR}```\n"
-    response += f"<b>PR Body</b>  : _{PR_BODY}_\n\n"
+    response += f"<b>PR Number</b>: <code>#{PR_NUMBER}</code>\n"
+    response += f"<b>PR Title</b> : <code>{PR_TITLE}</ode>\n"
+    response += f"<b>PR User</b>  : <code>{GITHUB_ACTOR}</code>\n"
+    response += f"<b>PR Body</b>  : <code>{PR_BODY}</code>\n\n"
     response += f"<b>Check it out</b>: {pr_url}\n"
     response += f"<b>Repository URL</b>: {repo_url}"
 elif GITHUB_EVENT_NAME == "issues":
     issue_url = f"{repo_url}/issues/{ISSUE_NUMBER}"
     response += f"A new event was triggered for an <b>Issue</b> in your repository <b>{REPOSITORY}</b>.\n\n"
-    response += f"<b>Issue Number</b>: ```#{ISSUE_NUMBER}```\n"
-    response += f"<b>Issue Title</b> : ```{ISSUE_TITLE}```\n"
-    response += f"<b>Issue User</b>  : ```{GITHUB_ACTOR}```\n"
-    response += f"<b>Issue Body</b>  : _{ISSUE_BODY}_\n\n"
+    response += f"<b>Issue Number</b>: <code>#{ISSUE_NUMBER}</code>\n"
+    response += f"<b>Issue Title</b> : <code>{ISSUE_TITLE}</code>\n"
+    response += f"<b>Issue User</b>  : <code>{GITHUB_ACTOR}</code>\n"
+    response += f"<b>Issue Body</b>  : <code>{ISSUE_BODY}</code>\n\n"
     response += f"<b>Check it out</b>: {issue_url}\n"
     response += f"<b>Repository URL</b>: {repo_url}"
 elif GITHUB_EVENT_NAME == "fork":
@@ -63,5 +63,5 @@ else:
 media_url = media_url_for_avatar if media_url_for_avatar else None
 body = f'{response}\n{media_url}' if media_url else response
 
-r = requests.get(f'https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={CHAT_ID}&text={response}&parse_mode=html')
+r = requests.get(f'https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={CHAT_ID}&text={body}&parse_mode=html')
 print('status -> '+str(r.status_code))
