@@ -12,9 +12,9 @@ GITHUB_ACTOR = os.getenv("GITHUB_ACTOR")
 GITHUB_EVENT_NAME = os.getenv("GITHUB_EVENT_NAME")
 EVENT_NAME = os.getenv("GITHUB_EVENT_NAME")
 PR_NUMBER = os.getenv("INPUT_PR_NUMBER")
-PR_TITLE=os.getenv("INPUT_PR_TITLE")
-PR_BODY=os.getenv("INPUT_PR_BODY")
-ISSUE_TITLE  = os.getenv("INPUT_ISSUE_TITLE")
+PR_TITLE = os.getenv("INPUT_PR_TITLE")
+PR_BODY = os.getenv("INPUT_PR_BODY")
+ISSUE_TITLE = os.getenv("INPUT_ISSUE_TITLE")
 ISSUE_NUMBER = os.getenv('INPUT_ISSUE_NUMBER')
 ISSUE_BODY = os.getenv('INPUT_ISSUE_BODY')
 REPO_FORK_COUNT = os.getenv('INPUT_REPO_FORK_COUNT')
@@ -55,12 +55,13 @@ elif GITHUB_EVENT_NAME == "watch":
     response += f"Current watch count: <b>{REPO_WATCH_COUNT}</b>\n\n"
     response += f"<b>Repository URL</b>: {repo_url}"
 else:
-    response += f"A new <b>{GITHUB_EVENT_NAME}</b> event was triggered by <b>{GITHUB_ACTOR}</b> in your repository <b>{REPOSITORY}</b>\n\n"
+    response += f"A new <b>{GITHUB_EVENT_NAME}</b> event was triggered by " \
+                f"<b>{GITHUB_ACTOR}</b> in your repository <b>{REPOSITORY}</b>\n\n"
     response += f"<b>Repository URL</b>: {repo_url}"
 
 # Prepare and send the message payload
-media_url = media_url_for_avatar if media_url_for_avatar else None,
-body = response
+media_url = media_url_for_avatar if media_url_for_avatar else None
+body = f'{response}\n{media_url}' if media_url else response
 
 r = requests.get(f'https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={CHAT_ID}&text={response}&parse_mode=html')
 print('status -> '+str(r.status_code))
