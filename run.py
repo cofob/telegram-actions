@@ -62,7 +62,7 @@ else:
 
 # Prepare and send the message payload
 media_url = media_url_for_avatar if media_url_for_avatar else None
-body = f'{response}\n{media_url}' if media_url else response
+body = response
 
 base_url = f'https://api.telegram.org/bot{TOKEN}/{"sendPhoto?" if media_url else "sendMessage?"}'
 
