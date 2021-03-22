@@ -23,9 +23,9 @@ ISSUE_BODY = os.getenv('INPUT_ISSUE_BODY')
 REPO_FORK_COUNT = os.getenv('INPUT_REPO_FORK_COUNT')
 REPO_WATCH_COUNT = os.getenv('INPUT_REPO_WATCH_COUNT')
 
-if IGNORE_FROM is not None:
+try:
     IGNORE = json.loads(IGNORE_FROM)
-else:
+except json.JSONDecodeError:
     IGNORE = []
 
 if GITHUB_ACTOR in IGNORE:
