@@ -25,7 +25,7 @@ REPO_WATCH_COUNT = os.getenv('INPUT_REPO_WATCH_COUNT')
 
 try:
     IGNORE = json.loads(IGNORE_FROM)
-except json.JSONDecodeError:
+except:
     IGNORE = []
 
 if GITHUB_ACTOR in IGNORE:
