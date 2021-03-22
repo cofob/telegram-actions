@@ -44,11 +44,11 @@ jobs:
 
 ### Push
 
-![](https://i.imgur.com/anD5rO8.jpg)
+![](https://i.imgur.com/reQ9pFv.jpg)
 
 ### Watch
 
-![](https://i.imgur.com/XhWtI5t.jpg)
+![](https://i.imgur.com/asZO7C5.jpg)
 
 ## Support
 Give us a :star2: to support!
