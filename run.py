@@ -1,5 +1,6 @@
 import os
 import requests
+from urllib.parse import urlencode
 
 # Get the twilio client specific values from env
 TOKEN = os.getenv("BOT_TOKEN")
@@ -63,5 +64,17 @@ else:
 media_url = media_url_for_avatar if media_url_for_avatar else None
 body = f'{response}\n{media_url}' if media_url else response
 
-r = requests.get(f'https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={CHAT_ID}&text={body}&parse_mode=html')
+base_url = f'https://api.telegram.org/bot{TOKEN}/{"sendPhoto?" if media_url else "sendMessage?"}'
+
+args = {'chat_id': CHAT_ID,
+        'parse_mode': 'html'}
+
+if media_url:
+    args['caption'] = body
+    args['photo'] = media_url
+else:
+    args['text'] = body
+
+r = requests.get(base_url+urlencode(args))
 print('status -> '+str(r.status_code))
+print('args -> '+str(args))
