@@ -28,7 +28,9 @@ try:
 except:
     IGNORE = []
 
-if GITHUB_ACTOR not in IGNORE:
+if GITHUB_ACTOR in IGNORE:
+    print('Actor in ignore')
+else:
     repo_url = f"{GITHUB_SERVER_URL}/{REPOSITORY}"
     response = f"Hello there, \n"
 

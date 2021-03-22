@@ -18,7 +18,7 @@ This is an action repository with an objective of notifying the user on Telegram
 -------------------|----------------------------------------------------|
 BOT_TOKEN          | bot token from @botfather (example: 11111111111:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 BOT_CHAT_ID        | chat_id with this bot (example: 12343245)
-BOT_IGNORE         | list of JSON with user names from which you want to ignore events (optional, example: ["username", "otherUsername"], draft support)
+BOT_IGNORE         | list of JSON with user names from which you want to ignore events (optional, example: ["username", "otherUsername"])
 
 
 ### Prepare the action workflow
