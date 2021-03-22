@@ -1,7 +1,7 @@
 <h1 align="center">:postbox: Telegram Actions for Github :postbox: </h1>
 
 ## Introduction
-This is an action repository with an objective of notifying the user on Telegram regarding several changes in their github repositories. Messages sent to Whatsapp are rich-formatted, easy to read and comprehend and also contains supportive media to enhance the experience.
+This is an action repository with an objective of notifying the user on Telegram regarding several changes in their github repositories. Messages sent to Telegram are rich-formatted, easy to read and comprehend and also contains supportive media to enhance the experience.
 
 ## Unique Features
 1. Offers rich-formatted push messages with texts, emojis and all details regarding the event
