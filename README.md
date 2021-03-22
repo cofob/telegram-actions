@@ -42,9 +42,13 @@ jobs:
 
 ## Screenshots
 
-### Pull Request Message
+### Push
 
-![Message for a PR event](https://i.imgur.com/anD5rO8.jpg)
+![](https://i.imgur.com/anD5rO8.jpg)
+
+### Watch
+
+![](https://i.imgur.com/XhWtI5t.jpg)
 
 ## Support
 Give us a :star2: to support!
