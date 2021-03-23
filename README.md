@@ -39,6 +39,7 @@ jobs:
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           BOT_CHAT_ID: ${{ secrets.BOT_CHAT_ID }}
+          BOT_IGNORE: ${{ secrets.BOT_IGNORE }}
 ```
 
 ## Screenshots
