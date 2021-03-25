@@ -59,4 +59,4 @@ jobs:
 ## Support
 Give us a :star2: to support!
 
-Based on [this repo](https://github.com/kaviadigdarshan/whatsapp-actions) Copyright © 2021 [cofob](https://github.com/kaviadigdarshan)
+Based on [this repo](https://github.com/kaviadigdarshan/whatsapp-actions) Copyright © 2021 [cofob](https://github.com/cofob)
